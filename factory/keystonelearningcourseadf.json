@@ -1,0 +1,9 @@
+{
+	"name": "keystonelearningcourseadf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "66145f78-b056-43d6-b523-70db3ffabda0",
+		"tenantId": "939ef48c-a8d8-441c-baff-4f9a57a6ddb7"
+	}
+}

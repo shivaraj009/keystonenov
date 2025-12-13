@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "using until",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/copyactivityeithforeachtest/blobs/sales/landing",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/6c943e5e-1806-420b-af89-18577d902f17/resourceGroups/RG_KeyStone_Learningcourse/providers/Microsoft.Storage/storageAccounts/sakeystonelearningcourse",
+			"events": [
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
