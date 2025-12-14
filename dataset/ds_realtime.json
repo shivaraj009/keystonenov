@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Store_101_Sales_20251215.csv",
 				"folderPath": "sales",
 				"fileSystem": "raw"
 			},
