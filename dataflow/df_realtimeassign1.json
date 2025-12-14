@@ -31,7 +31,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(StoreId>0 &&Quantity>0&&UnitPrice>0) ~> filter1"
+				"source1 filter(StoreId>0 &&Quantity>0&&UnitPrice>0 && SaleDateTime == addDays(currentDate(),0)) ~> filter1"
 			]
 		}
 	}
