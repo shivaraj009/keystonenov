@@ -3,11 +3,35 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_realtime",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filter1"
+				}
+			],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          StoreId as integer,",
+				"          InvoiceNo as string,",
+				"          ProductId as string,",
+				"          Quantity as integer,",
+				"          UnitPrice as float,",
+				"          Discount as float,",
+				"          SaleDateTime as date",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 filter(StoreId>0) ~> filter1"
 			]
 		}
 	}
