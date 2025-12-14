@@ -20,18 +20,18 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          StoreId as integer,",
+				"          StoreId as integer '000',",
 				"          InvoiceNo as string,",
 				"          ProductId as string,",
 				"          Quantity as integer,",
 				"          UnitPrice as float,",
 				"          Discount as float,",
-				"          SaleDateTime as date",
+				"          SaleDateTime as date 'dd-MM-yyyy'",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(StoreId>0) ~> filter1"
+				"source1 filter(StoreId>0 &&Quantity>0&&UnitPrice>0) ~> filter1"
 			]
 		}
 	}
